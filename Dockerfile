@@ -6,7 +6,7 @@ RUN apt-get install -y python-dev python-setuptools git build-essential libxml2-
 RUN easy_install pip
 RUN pip install virtualenv
 RUN virtualenv /var/www/pootle/env
-RUN /var/www/pootle/env/bin/pip install Pootle==2.7.2
+RUN /var/www/pootle/env/bin/pip install Pootle==2.7.6
 RUN /var/www/pootle/env/bin/pip install django-tastypie==0.14.0
 RUN mkdir -p /var/local/pootledb
 RUN /var/www/pootle/env/bin/pootle init

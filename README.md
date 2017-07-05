@@ -1,7 +1,7 @@
 Pootle Docker Container
 =======================
 
-This is the source for **jannkleen/pootle** in the docker index.
+This is the source for **g3ronim0/pootle** in the docker index.
 
 Installation
 ------------
@@ -9,13 +9,13 @@ Installation
 - The easy way:
 
     ```
-    docker pull jannkleen/pootle
+    docker pull g3ronim0/pootle
     ```
 
 - The other way:
 
     ```
-    git clone https://github.com/JannKleen/pootle-docker.git
+    git clone https://github.com/g3ronim0/pootle-docker.git
 
     cd pootle-docker
 
@@ -31,7 +31,7 @@ You probably want to set up a persistant database so you don't loose all your da
 There is a simple bootstrap script which creates the Volume Container for you, just run:
 
 ```
-/usr/bin/wget -O - https://raw.github.com/JannKleen/pootle-docker/master/bootstrap.sh | sh -s -
+/usr/bin/wget -O - https://raw.github.com/g3ronim0/pootle-docker/master/bootstrap.sh | sh -s -
 ```
 
 After that you should start your pootle instance by running:
