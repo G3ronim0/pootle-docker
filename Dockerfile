@@ -1,4 +1,4 @@
-FROM ubuntu:13.10
+FROM ubuntu:16.04
 MAINTAINER Jann Kleen "jann@resmio.com"
 VOLUME ["/var/pootledb"]
 RUN apt-get -qq update
@@ -6,8 +6,8 @@ RUN apt-get install -y python-dev python-setuptools git build-essential libxml2-
 RUN easy_install pip
 RUN pip install virtualenv
 RUN virtualenv /var/www/pootle/env
-RUN /var/www/pootle/env/bin/pip install Pootle==2.5.1.1
-RUN /var/www/pootle/env/bin/pip install django-tastypie==0.12.1
+RUN /var/www/pootle/env/bin/pip install Pootle==2.7.2
+RUN /var/www/pootle/env/bin/pip install django-tastypie==0.14.0
 RUN mkdir -p /var/local/pootledb
 RUN /var/www/pootle/env/bin/pootle init
 RUN sed -i "s/\('NAME' *: *\).*/\1'\/var\/local\/pootledb\/pootle.db',/" ~/.pootle/pootle.conf
