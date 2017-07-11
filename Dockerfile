@@ -11,9 +11,6 @@ RUN /var/www/pootle/env/bin/pip install django-tastypie==0.14.0
 RUN mkdir -p /var/local/pootledb
 RUN /var/www/pootle/env/bin/pootle init
 RUN sed -i "s/\('NAME' *: *\).*/\1'\/var\/local\/pootledb\/pootle.db',/" ~/.pootle/pootle.conf
-RUN /var/www/pootle/env/bin/pootle setup
-RUN /var/www/pootle/env/bin/pootle collectstatic --noinput
-RUN /var/www/pootle/env/bin/pootle assets build
 RUN grep -q '^POOTLE_ENABLE_API' ~/.pootle/pootle.conf && sed -i "s/\(POOTLE_ENABLE_API *= *\).*/\1True/" ~/.pootle/pootle.conf || echo "\nPOOTLE_ENABLE_API = True\n" >> ~/.pootle/pootle.conf
 RUN grep -q '^ALLOWED_HOSTS' ~/.pootle/pootle.conf && sed -i "s/\(ALLOWED_HOSTS *= *\).*/\1\[\"\*\", \]/" ~/.pootle/pootle.conf || echo "\nALLOWED_HOSTS = [\"*\", ]\n" >> ~/.pootle/pootle.conf
 ADD run.sh /usr/local/bin/run
