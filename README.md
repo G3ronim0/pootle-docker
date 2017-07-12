@@ -9,7 +9,7 @@ Installation
 - The easy way:
 
     ```
-    docker pull g3ronim0/pootle
+    docker pull g3ronim0/pootle-docker
     ```
 
 - The other way:
